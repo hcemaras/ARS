@@ -1,0 +1,82 @@
+Aşağıdaki gereksinimlere uygun bir Google E-Tablosu ve Apps Script kodu oluşturmam gerekiyor. Yardımınıza ihtiyacım var:
+---
+### 1. Yapı ve Sayfalar
+
+#### A. Ana Sayfa (Dashboard)
+- **Müşteri Seçimi Açılır Listesi:**  
+  - Müşteri sayfasında yer alan, "göster" değerine göre filtrelenmiş verilerden oluşan açılır liste.
+  - Seçilen müşteriye göre, müşteri tablosundaki "Müşteri Grubu" (Ekmeklik/Endüstriyel/Perakende/Yan Mamul/Tüketici) değeri, sonraki aşamada otomatik olarak kullanılacak.
+- **Bildirim Türü Açılır Listesi:**  
+  - Seçenekler: Şikayet, İade.
+- **"Veri Girişine Git" Butonu:**  
+  - Seçilen müşteri (müşteri grubuna göre) ve bildirim türü kombinasyonuna ait veri giriş sayfasına yönlendirme yapacak.
+
+#### B. Veri Giriş Sayfaları (Her Kombinasyon İçin Ayrı)
+- **Örnek Sayfa Adları:**  
+  - `Endüstriyel_Kalite`, `Perakende_Sevkiyat`, `Ekmeklik_İade` vb.
+- **Dinamik İçerik:**  
+  - Ana sayfadaki seçim kombinasyonuna göre, ilgili veri giriş sayfasında **sadece doldurulması gereken alanlar** gösterilecek.
+  - Sayfada, her alanın zorunlu veya opsiyonel olduğu açıkça belirtilecek (örneğin: zorunlu alanların yanında kırmızı arka plan veya “*Zorunlu” etiketi).
+  
+#### C. Ana Veri Tablosu
+- Tüm verilerin toplandığı merkezi tablo.
+- **Sütunlar:**  
+  - Tüm kombinasyonlarda kullanılabilecek tüm alanlar yer almalı.
+  - Otomatik tarih/saat alanı.
+  - Ek olarak, veri gönderimi sırasında seçilen müşteriye ait "Müşteri Grubu" değeri (müşteri tablosundaki) otomatik olarak ilgili kolon altında eklenecek.
+
+#### D. Zorunlu Alan Konfigürasyon Sayfaları
+- **Örnek Sayfa Adları:**  
+  - `Endüstriyel_Kalite_Zorunlu`, `Perakende_Sevkiyat_Zorunlu` vb.
+- **İçerik:**  
+  - İlgili kombinasyon için zorunlu sütun başlıkları liste halinde yer almalı.
+
+---
+### 2. İstenen Özellikler
+
+1. **Dinamik Yönlendirme**
+   - Kullanıcı Ana Sayfa’daki açılır listelerden (müşteri ve bildirim tipi) seçim yaptığında, sadece ilgili kombinasyona ait veri giriş sayfasına erişebilmeli.
+  
+2. **Dinamik Veri Girişi Arayüzü**
+   - Veri giriş sayfası, ana sayfadaki seçim kombinasyonuna göre **sadece doldurulması gereken alanları** göstermeli.
+   - Her alanın yanında, alanın zorunlu veya opsiyonel olduğu net bir şekilde belirtilmeli.
+
+3. **Akıllı Veri Doğrulama ve İşlemleri**
+   - Her veri giriş sayfasında "Gönder" butonu bulunmalı.
+   - Butona tıklandığında:
+     a. Sayfa için tanımlanmış zorunlu alanlar kontrol edilmeli.
+     b. Eksik zorunlu alan varsa, örneğin “Lütfen [X] sütununu doldurun!” şeklinde hata mesajı gösterilmeli.
+     c. Tüm alanlar doğru doldurulmuşsa, veriler **Ana Veri Tablosu**’na ilgili kolonlara göre eklenmeli.
+     d. Eklenen veri veya veriler girilen sayfada temizlenmeli.
+     e. "3 kayıt başarıyla eklendi!" gibi toast mesajı ile işlem sonucu kullanıcıya bildirilmeli.
+
+4. **Veri Eşleştirme ve Otomasyon**
+   - **Ana Veri Tablosu**’na veri gönderilirken, ilgili kayıt için seçilen müşteriye ait müşteri tablosundaki "Müşteri Grubu" değeri otomatik olarak ilgili kolon altında eklenmeli.
+   - Ana veri tablosu sütunları, kaynak sayfa adına göre dinamik olarak eşleşmeli.
+   - Yanlış sayfada veri girişi yapılıyorsa “Bu sayfaya erişim izniniz yok!” uyarısı verilmeli.
+   - Performans: 100+ satırlık toplu gönderimlerde işlem 10 saniyeyi aşmamalı.
+
+---
+### 3. Apps Script Beklentileri
+
+#### Fonksiyon 1: `navigateToDataEntry()`
+- **Amaç:**  
+  - Ana Sayfa’daki seçilen müşteri (filtrelenmiş açılır listeden) ve bildirim türüne göre, ilgili veri giriş sayfasına yönlendirme yapacak.
+- **Beklentiler:**  
+  - Seçilen müşteriye ait müşteri grubunu da belirleyip, bu değerin sonraki veri gönderiminde kullanılmasını sağlamalı.
+
+#### Fonksiyon 2: `validateAndSubmit()`
+```javascript
+// Örnek Kod Yapısı
+function validateAndSubmit() {
+  const activeSheet = SpreadsheetApp.getActiveSheet();
+  const sheetName = activeSheet.getName();
+  const zorunluAlanlar = getMandatoryColumns(sheetName); // Zorunlu sütunları al
+  
+  // Dinamik olarak sadece gösterilmesi gereken alanlar kontrol edilmeli
+  // Veri kontrolü ve gönderim işlemleri:
+  //  - Eksik alan varsa uyarı verilmeli,
+  //  - Başarılı ise veriler Ana Veri Tablosu'na ilgili kolonlara eklenmeli,
+  //  - Giriş yapılan satırlar temizlenmeli,
+  //  - "X kayıt başarıyla eklendi!" toast mesajı gösterilmeli.
+}
