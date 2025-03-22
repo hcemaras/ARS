@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+  <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
+    <mxGraphModel dx="863" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-2" value="SALT01 Modülünü Aç" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="140" y="20" width="204" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-3" value="Oluştur Tuşuna Bas" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="143" y="124" width="197" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-4" value="Firmayı Seç" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="169" y="228" width="146" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-5" value="Fatura Tipi" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="176" y="332" width="132" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-6" value="Q3 Teklif Tipini Seç" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="537" width="197" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-7" value="Q1 Teklif Tipini Seç" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="267" y="537" width="197" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-8" value="Tamam&#39;a Tıkla" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="159" y="641" width="165" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-9" target="PnQ5jYkmHCNzZB-Nice5-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-9" value="Malzeme kodu seçilir" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="137" y="745" width="210" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-10" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-2" target="PnQ5jYkmHCNzZB-Nice5-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-11" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-3" target="PnQ5jYkmHCNzZB-Nice5-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-12" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-4" target="PnQ5jYkmHCNzZB-Nice5-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-13" value="Ön Faturalı" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.91;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-5" target="PnQ5jYkmHCNzZB-Nice5-6">
+          <mxGeometry x="-0.0044" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="118" y="500" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-14" value="Sevkiyat Başı Faturalı" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.91;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-5" target="PnQ5jYkmHCNzZB-Nice5-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-15" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.11;entryY=-0.01;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-6" target="PnQ5jYkmHCNzZB-Nice5-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="118" y="616" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.89;entryY=-0.01;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-7" target="PnQ5jYkmHCNzZB-Nice5-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="616" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-17" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="PnQ5jYkmHCNzZB-Nice5-8" target="PnQ5jYkmHCNzZB-Nice5-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnQ5jYkmHCNzZB-Nice5-18" value="Fiyatı giriniz." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="182" y="876" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
